@@ -206,7 +206,7 @@ export const ColumnVisibility: TableFeature = {
     table: Table<TData>,
   ): void => {
     row._getAllVisibleCells = () => {
-      const cells = [row.getAllCells(), table.getState().columnVisibility]
+      const cells = row.getAllCells();
       return cells.filter((cell) => cell.column.getIsVisible())
     };
     
@@ -214,7 +214,7 @@ export const ColumnVisibility: TableFeature = {
       return [
         ...row.getLeftVisibleCells(),
         ...row.getCenterVisibleCells(),
-        ...row.getRightVisibleCells(,
+        ...row.getRightVisibleCells()
       ];
     };
   },
