@@ -167,7 +167,7 @@ export const createRow = <TData extends RowData>(
       }
       return parentRows.reverse()
     },
-    getAllCells: () => () => {
+    getAllCells: () => {
       const leafColumns = table.getAllLeafColumns();
       return leafColumns.map((column) => {
         return createCell(table, row as Row<TData>, column, column.id)
